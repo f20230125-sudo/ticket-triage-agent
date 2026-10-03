@@ -44,6 +44,17 @@ Or run with no arguments to triage 5 bundled sample tickets:
 python triage.py
 ```
 
+## Tests
+
+```bash
+pip install pytest
+pytest
+```
+
+The tests swap Gemini for a stub client, so they run without an API key
+and make no network calls. They cover the request sent to the model, the
+enum-constrained schema, the retry on a temporary 503, and the CLI.
+
 ## Stack
 
 Python, Google Gemini API (`google-genai`), Pydantic (schema-validated
